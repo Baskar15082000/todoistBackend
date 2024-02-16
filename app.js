@@ -1,14 +1,15 @@
 const express = require("express");
 const sequelize = require("./DB-connection");
 const { where } = require("sequelize");
-const project = require("./model/project");
-const task = require("./model/task");
-const comment = require("./model/comment");
-const label = require("./model/label");
-const taskLabel = require("./model/taskLabel");
+const project = require("./models/project");
+const task = require("./models/task");
+const comment = require("./models/comment");
+const label = require("./models/label");
+const taskLabel = require("./models/taskLabel");
 const projectRouter = require("./Routers/project");
 const taskRouter = require("./Routers/task");
 const commentRouter = require("./Routers/comment");
+const labelRouter = require("./Routers/label");
 
 //Project table relation(one to many)
 project.hasMany(task, { onDelete: "CASCADE" });
@@ -26,7 +27,7 @@ const app = express();
 const port = 3000;
 app.use(express.json());
 
-app.use(projectRouter, taskRouter, commentRouter);
+app.use(projectRouter, taskRouter, commentRouter, labelRouter);
 app.listen(port, async () => {
   console.log("Listening on port " + port);
   try {

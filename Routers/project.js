@@ -1,6 +1,6 @@
 const express = require("express");
 const router = express.Router();
-const project = require("../model/project");
+const project = require("../models/project");
 router.post("/api/todoist.com/createProject", async (req, res) => {
   try {
     const newProject = await project.create({

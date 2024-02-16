@@ -19,6 +19,10 @@ const task = sequelize.define(
       type: Sequelize.BOOLEAN,
       defaultValue: false,
     },
+    postedAt: {
+      type: Sequelize.TIME,
+      defaultValue: Sequelize.literal("CURRENT_TIMESTAMP"),
+    },
   },
   {
     freezeTableName: true,

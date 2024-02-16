@@ -1,6 +1,6 @@
 const express = require("express");
 const router = express.Router();
-const comment = require("../model/comment");
+const comment = require("../models/comment");
 router.post("/api/todoist.com/createComment/:taskId", async (req, res) => {
   try {
     const newComment = await comment.create({

@@ -14,6 +14,7 @@ const label = sequelize.define(
 
     is_favorite: {
       type: Sequelize.BOOLEAN,
+      defaultValue: false,
     },
   },
   {

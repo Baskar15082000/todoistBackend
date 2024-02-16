@@ -1,6 +1,6 @@
 const express = require("express");
 const router = express.Router();
-const task = require("../model/task");
+const task = require("../models/task");
 
 router.post("/api/todoist.com/createTask/:projectId", async (req, res) => {
   try {
